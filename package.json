@@ -2,12 +2,13 @@
   "name": "swc-server",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
     "dev": "concurrently \"pnpm watch-compile\" \"pnpm watch-dev\"",
-    "watch-compile": "swc src -w -d dist --config-file ./.swcrc",
-    "watch-dev": "nodemon --watch \"dist/**/*\" -e js ./dist/src/server.js",
-    "build": "swc src -d dist --config-file ./.swcrc",
-    "start": "node dist/src/server.js",
+    "watch-compile": "swc src server.ts -w -d dist --config-file ./.swcrc -q",
+    "watch-dev": "nodemon --watch \"dist/**/*\" -e js ./dist/server.js",
+    "build": "swc src server.ts -d dist --config-file ./.swcrc -q",
+    "start": "node dist/server.js",
     "clean": "rm -rf dist"
   },
   "keywords": [],

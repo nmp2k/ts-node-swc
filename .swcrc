@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json.schemastore.org/swcrc",
+  "exclude": ["\/types\/",".*\\.js$", ".*\\.map$", ".*\\.d\\.ts$"],
   "jsc": {
     "parser": {
       "syntax": "typescript",
@@ -9,14 +9,14 @@
     },
     "target": "es2020",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/*"],
     },
     "baseUrl": "."
   },
   "module": {
     "type": "commonjs",
-    "noInterop": false,
     "strictMode": true,
-    "resolveFully": true
+    "resolveFully": true,
+    "noInterop": false
   }
 }
