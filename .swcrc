@@ -1,5 +1,10 @@
 {
-  "exclude": ["\/types\/",".*\\.js$", ".*\\.map$", ".*\\.d\\.ts$"],
+  "exclude": [
+    "\/types\/",
+    ".*\\.js$",
+    ".*\\.map$",
+    ".*\\.d\\.ts$"
+  ],
   "jsc": {
     "parser": {
       "syntax": "typescript",
@@ -7,16 +12,22 @@
       "decorators": true,
       "dynamicImport": true
     },
+    "transform": {
+      // typescript stage 3 decorator
+      "decoratorVersion": "2022-03"
+    },
     "target": "es2020",
     "paths": {
-      "~/*": ["src/*"],
+      "~/*": [
+        "src/*"
+      ]
     },
     "baseUrl": "."
   },
   "module": {
-    "type": "commonjs",
+    "type": "es6",
     "strictMode": true,
     "resolveFully": true,
-    "noInterop": false
+    "noInterop": true
   }
 }
